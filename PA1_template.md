@@ -33,7 +33,7 @@ paste("Median steps per day=", median(steps_per_day$x))# note: calculated withou
 ```
 ## [1] "Median steps per day= 10395"
 ```
-![](unnamed-chunk-2-1.png)
+
 
 ## What is the average daily activity pattern?
 
