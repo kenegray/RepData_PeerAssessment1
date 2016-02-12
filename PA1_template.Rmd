@@ -31,6 +31,8 @@ names(steps_per_interval)<- c("Time", "Number of Steps")
 plot(steps_per_interval$Time,steps_per_interval$`Number of Steps`, type = "l")
 ``` 
 
+![Time with the highest average steps per day](unnamed-chunk-3-1.png)
+
 Below shows the time of day with the most steps on average
 ```{r,echo = TRUE} 
 steps_per_interval[steps_per_interval$`Number of Steps`== max(steps_per_interval$`Number of Steps`),1:2]

@@ -33,6 +33,7 @@ paste("Median steps per day=", median(steps_per_day$x))# note: calculated withou
 ```
 ## [1] "Median steps per day= 10395"
 ```
+![](unnamed-chunk-2-1.png)
 
 ## What is the average daily activity pattern?
 
@@ -43,6 +44,8 @@ plot(steps_per_interval$Time,steps_per_interval$`Number of Steps`, type = "l")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-3-1.png)
+
+![Time with the highest average steps per day](unnamed-chunk-3-1.png)
 
 Below shows the time of day with the most steps on average
 
