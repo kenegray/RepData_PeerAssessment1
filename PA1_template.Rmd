@@ -22,7 +22,7 @@ paste("Average steps per day=", mean(steps_per_day$x))  # note: calculated witho
 paste("Median steps per day=", median(steps_per_day$x))# note: calculated without NA
 
 ``` 
-![](unnamed-chunk-2-1.png)
+
 
 ## What is the average daily activity pattern?
 ```{r,echo = TRUE} 
@@ -31,7 +31,6 @@ names(steps_per_interval)<- c("Time", "Number of Steps")
 plot(steps_per_interval$Time,steps_per_interval$`Number of Steps`, type = "l")
 ``` 
 
-![Time with the highest average steps per day](unnamed-chunk-3-1.png)
 
 Below shows the time of day with the most steps on average
 ```{r,echo = TRUE} 
@@ -74,7 +73,6 @@ hist(steps_per_day_ad_wm$x, col="lightblue", breaks=30, main=paste("Histogram of
 hist(steps_per_day$x,col="blue", breaks=30)
 
 ```
-![](unnamed-chunk-9-2.png)
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
