@@ -113,7 +113,7 @@ hist(steps_per_day$x,col="blue", breaks=30)
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-9-2.png)
-
+![](unnamed-chunk-9-2.png)
 
 
 ## Are there differences in activity patterns between weekdays and weekends?
