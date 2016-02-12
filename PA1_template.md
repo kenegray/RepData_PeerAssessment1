@@ -6,6 +6,7 @@
 
 ```r
 activity_data<- read.csv("activity.csv", header=TRUE)
+library(ggplot2)
 ```
 
 ## What is mean total number of steps taken per day?
@@ -88,7 +89,7 @@ mean(ad_wm_steps_per_day$x)
 ```
 ## [1] 10766.19
 ```
-The median number of steps per day is shewn below and is higher than when excluding the NA's
+The median number of steps per day is shown below and is higher than when excluding the NA's
 
 ```r
 median(ad_wm_steps_per_day$x)
@@ -131,11 +132,8 @@ The dataset is now created with the mean for each day's interval.
 
 ```r
 #ad_wm_interval_ave<- aggregate(ad_wm$steps,list(ad_wm$interval), FUN=mean)
-ad_wm_we<- ad_wm[ad_wm$day=="Weekend",]
-ad_wm_wd<- ad_wm[ad_wm$day=="Weekday",]
-par(mfrow=c(2,1))
-plot(ad_wm_wd$interval,ad_wm_wd$mean,type = "l")
-plot(ad_wm_we$interval,ad_wm_we$mean,type = "l")
+ad_wm_day_ave_interval<- aggregate(steps ~ interval + day,data=ad_wm, mean)
+ggplot(ad_wm_day_ave_interval, aes(interval,steps))+geom_line()+facet_grid((day~.))
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-11-1.png)

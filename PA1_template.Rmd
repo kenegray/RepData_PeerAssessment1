@@ -10,6 +10,7 @@ output:
 
 ```{r,echo = TRUE} 
 activity_data<- read.csv("activity.csv", header=TRUE)
+library(ggplot2)
 
 ``` 
 
@@ -60,7 +61,7 @@ ad_wm_steps_per_day<- aggregate(ad_wm$steps, list(ad_wm$date), FUN=sum)
 mean(ad_wm_steps_per_day$x)
 
 ``` 
-The median number of steps per day is shewn below and is higher than when excluding the NA's
+The median number of steps per day is shown below and is higher than when excluding the NA's
 ```{r,echo = TRUE} 
 median(ad_wm_steps_per_day$x)
 
@@ -87,11 +88,8 @@ names(ad_wm)
 The dataset is now created with the mean for each day's interval.
 ```{r,echo = TRUE} 
 #ad_wm_interval_ave<- aggregate(ad_wm$steps,list(ad_wm$interval), FUN=mean)
-ad_wm_we<- ad_wm[ad_wm$day=="Weekend",]
-ad_wm_wd<- ad_wm[ad_wm$day=="Weekday",]
-par(mfrow=c(2,1))
-plot(ad_wm_wd$interval,ad_wm_wd$mean,type = "l")
-plot(ad_wm_we$interval,ad_wm_we$mean,type = "l")
+ad_wm_day_ave_interval<- aggregate(steps ~ interval + day,data=ad_wm, mean)
+ggplot(ad_wm_day_ave_interval, aes(interval,steps))+geom_line()+facet_grid((day~.))
 
 
 ``` 
