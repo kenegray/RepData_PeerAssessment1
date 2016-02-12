@@ -22,7 +22,7 @@ paste("Average steps per day=", mean(steps_per_day$x))  # note: calculated witho
 paste("Median steps per day=", median(steps_per_day$x))# note: calculated without NA
 
 ``` 
-[unnamed-chunk-2-1.png]
+![](unnamed-chunk-2-1.png)
 
 ## What is the average daily activity pattern?
 ```{r,echo = TRUE} 
